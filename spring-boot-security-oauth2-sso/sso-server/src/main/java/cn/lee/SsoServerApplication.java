@@ -5,11 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
+
 /**
- * Created on 2017/12/26.
- *
- * @author zlf
- * @since 1.0
+ * @author litz-a
  */
 @EnableResourceServer
 @SpringBootApplication
