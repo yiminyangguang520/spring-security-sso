@@ -1,0 +1,2 @@
+# spring-security-sso
+sso
