@@ -1,16 +1,29 @@
-auth-server: http://demo.baomidou.com:8082/sso-server
+auth-server: http://demo.baomidou.com:8082/sso-server # sso-server地址
+
 server:
   port: 8084
   servlet:
     context-path: /client2
+    session:
+      cookie:
+        name: auth_session
+
 security:
   oauth2:
     client:
       client-id: merryyou2
       client-secret: merryyousecrect2
-      user-authorization-uri: ${auth-server}/oauth/authorize
-      access-token-uri: ${auth-server}/oauth/token
-      registered-redirect-uri: http://xxlssoclient2.com:8084/client2
+      user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
+      access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
     resource:
-      jwt:
-        key-uri: ${auth-server}/oauth/token_key
+      token-info-uri: ${auth-server}/oauth/check_token
+
+
+logging:
+  level:
+    org.springframework.security: Debug
+
+
+spring:
+  thymeleaf:
+    cache: false

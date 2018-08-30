@@ -1,4 +1,4 @@
-package cn.lee.sso.client.config;
+package cn.lee.soo.client.config;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;

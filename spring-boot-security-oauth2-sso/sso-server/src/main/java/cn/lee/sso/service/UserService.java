@@ -12,5 +12,5 @@ public interface UserService {
    * @return
    * @throws Exception
    */
-  String acountAuthenticate(String account, String password) throws Exception;
+  String accountAuthenticate(String account, String password) throws Exception;
 }
