@@ -27,7 +27,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     String result = Constant.ERROR;
     try {
-      result = userService.acountAuthenticate(username, password);
+      result = userService.accountAuthenticate(username, password);
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -24,7 +24,7 @@ public class LogoutController {
   @Autowired
   private ConsumerTokenServices consumerTokenServices;
 
-  @RequestMapping("/exit")
+  @RequestMapping("/perform_logout")
   public void exit(HttpServletRequest request, HttpServletResponse response) {
     Enumeration headerNames = request.getHeaderNames();
     while (headerNames.hasMoreElements()) {

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>SSO client1</title>
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>-->
+
+  <!--<link type="text/css" rel="stylesheet" th:href="@{/webjars/materializecss/0.99.0/css/materialize.min.css}"/>-->
+  <!--<link type="text/css" rel="stylesheet" th:href="@{/webjars/material-design-icons/3.0.1/material-icons.css}"/>-->
+
+  <!--<link rel="stylesheet" th:href="@{/static/css/materialize.min.css}">-->
+  <!--<link rel="stylesheet" th:href="@{/static/css/material-icons.css}">-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
+</head>
+
+<body>
+<div class="container">
+
+  <!--<div class="col-sm-12">-->
+    <!--<h1>SSO client1</h1>-->
+    <!--<a class="btn btn-primary" href="securedPage">Login</a>-->
+    <!--<a href="http://xxlssoclient2.com:8084/client2">访问Client2</a><br/>-->
+    <!--<a href="/logout">退出登录1</a><br/>-->
+    <!--<a href="http://demo.baomidou.com:8082/sso-server/exit">退出登录2</a>-->
+  <!--</div>-->
+
+  <div class="col-sm-12">
+    <h1>SSO client1</h1>
+    <a class="waves-effect waves-light btn btn-large" href="securedPage">访问保护页面</a><br/><br/>
+    <a class="waves-effect waves-light btn btn-large" href="http://xxlssoclient2.com:8084/client2">
+      <i class="material-icons left">cloud</i>
+      访问Client2
+    </a><br/><br/>
+    <!--<a class="btn btn-large waves-effect waves-light" href="/logout">退出登录-->
+      <!--<i class="material-icons right">send</i>-->
+    <!--</a>-->
+  </div>
+</div>
+
+<!--<script type="text/javascript" th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/webjars/materializecss/0.99.0/js/materialize.min.js}"></script>-->
+
+<!--<script type="text/javascript" th:src="@{/static/js/jquery-3.3.1.min.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/static/js/materialize.min.js}"></script>-->
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>

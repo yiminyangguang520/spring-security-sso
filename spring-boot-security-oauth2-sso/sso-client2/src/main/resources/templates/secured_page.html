@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Spring Security SSO</title>
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>-->
+
+  <!--<link rel="stylesheet" th:href="@{/webjars/materializecss/0.99.0/css/materialize.min.css}"/>-->
+  <!--<link rel="stylesheet" th:href="@{/webjars/material-design-icons/3.0.1/material-icons.css}"/>-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
+</head>
+
+<body>
+<div class="container">
+  <form th:action="@{/logout}" method="post" id="userform">
+    <nav>
+      <div class="nav-wrapper blue lighten-1">
+        <a th:href="${#httpServletRequest.getContextPath()}" style="margin-left: 2%">首页</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" th:text="${#httpServletRequest.remoteUser}">Dropdown
+            <i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a href="#" onclick="document.getElementById('userform').submit();"><i
+              class="material-icons">power_settings_new</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </form>
+  <div class="col-sm-12">
+    <h1>Secured Page</h1>
+    <h3 class="alert">Welcome, <span th:text="${#authentication.name}">Name</span></h3>
+  </div>
+</div>
+
+<!--<script type="text/javascript" th:src="@{/webjars/jquery/2.2.1/jquery.min.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/webjars/materializecss/0.99.0/js/materialize.min.js}"></script>-->
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>
