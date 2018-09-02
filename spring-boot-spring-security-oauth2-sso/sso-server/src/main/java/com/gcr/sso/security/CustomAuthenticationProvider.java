@@ -1,6 +1,6 @@
 package com.gcr.sso.security;
 
-import com.gcr.sso.constant.Domain;
+import com.gcr.sso.constant.Constant;
 import com.gcr.sso.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.Resource;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.jdbc.datasource.init.DataSourceInitializer;
 import org.springframework.jdbc.datasource.init.DatabasePopulator;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
@@ -24,6 +25,7 @@ import org.springframework.security.oauth2.provider.OAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.approval.ApprovalStore;
 import org.springframework.security.oauth2.provider.approval.ApprovalStoreUserApprovalHandler;
 import org.springframework.security.oauth2.provider.approval.JdbcApprovalStore;
+import org.springframework.security.oauth2.provider.approval.TokenApprovalStore;
 import org.springframework.security.oauth2.provider.approval.UserApprovalHandler;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
@@ -33,6 +35,7 @@ import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 /**
  * @author litz-a
@@ -55,6 +58,9 @@ public class CustomAuthorizationServerConfigJdbc extends AuthorizationServerConf
 
   @Autowired
   private CustomTokenEnhancer customTokenEnhancer;
+
+  @Autowired
+  private LettuceConnectionFactory lettuceConnectionFactory;
 
   @Autowired
   private AuthenticationManager authenticationManager;
@@ -86,7 +92,10 @@ public class CustomAuthorizationServerConfigJdbc extends AuthorizationServerConf
 
   @Bean
   public ApprovalStore approvalStore() {
-    return new JdbcApprovalStore(dataSource);
+    TokenApprovalStore tokenApprovalStore = new TokenApprovalStore();
+    tokenApprovalStore.setTokenStore(tokenStore());
+    return tokenApprovalStore;
+//    return new JdbcApprovalStore(dataSource);
   }
 
   @Bean
@@ -120,7 +129,10 @@ public class CustomAuthorizationServerConfigJdbc extends AuthorizationServerConf
 
   @Bean
   public TokenStore tokenStore() {
-    return new JdbcTokenStore(dataSource);
+//    return new JdbcTokenStore(dataSource);
+
+    RedisTokenStore redisTokenStore = new RedisTokenStore(lettuceConnectionFactory);
+    return redisTokenStore;
   }
 
   @Override
