@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient;
 import org.springframework.stereotype.Service;
 
 /**
- * @author litz-a
+ * @author min
  */
 @Service
 public class UserServiceImpl implements UserService {

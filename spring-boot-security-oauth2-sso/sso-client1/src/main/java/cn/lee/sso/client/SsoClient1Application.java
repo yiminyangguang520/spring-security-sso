@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 
 /**
- * @author litz-a
+ * @author min
  */
 @EnableOAuth2Sso
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})

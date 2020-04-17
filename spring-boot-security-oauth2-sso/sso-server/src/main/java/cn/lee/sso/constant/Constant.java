@@ -1,7 +1,7 @@
 package cn.lee.sso.constant;
 
 /**
- * @author litz-a
+ * @author min
  */
 public class Constant {
 
